@@ -43,7 +43,7 @@ const saveCoords = async (lat, lon) => {
 const getForecast = async () => {
     try {
         const lat = process.env.LAT ?? await getKeyValue(TOKEN_DICTIONARY.lat)
-        const lon = process.env.LAT ?? await getKeyValue(TOKEN_DICTIONARY.lon)
+        const lon = process.env.LON ?? await getKeyValue(TOKEN_DICTIONARY.lon)
         const weather = await getWeather(lat, lon)
         printWeather(weather, getIcon(weather.weather[0].icon))
     } catch (e) {
